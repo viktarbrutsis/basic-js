@@ -1,7 +1,7 @@
 const { NotImplementedError } = require('../extensions/index.js');
 
 const MODERN_ACTIVITY = 15;
-const HALF_LIFE_PERIOD = 5730;
+const HALF_LIFE_PERIOD = 5730;//углерод-14
 
 /**
  * Determine the age of archeological find by using
@@ -17,9 +17,16 @@ const HALF_LIFE_PERIOD = 5730;
  * dateSample('WOOT!') => false
  *
  */
-function dateSample(/* sampleActivity */) {
-  throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
+function dateSample(sampleActivity) {
+  //константу скорости реакции по ее периоду полураспада (5730 лет) по уравнению 3 : 
+  const k = 0.693 / HALF_LIFE_PERIOD;//периода полураспада реакции первого порядка
+  // time = ln ( N 0 / N ) / k;
+  // N 0  - начальная активность, N - конечная активность
+  if (typeof(sampleActivity) === 'string' && (+sampleActivity) > 0 && (+sampleActivity) < MODERN_ACTIVITY) {
+    return Math.ceil(Math.log(MODERN_ACTIVITY / +sampleActivity) / k);
+  } else {
+    return false;
+  }
 }
 
 module.exports = {

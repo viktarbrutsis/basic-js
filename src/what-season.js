@@ -15,15 +15,13 @@ const date = new Date(81, 10, 13, 12, 50, 13, 493)
 function getSeason(date) {
   //getOwnPropertyNames возвращает массив всех свойств
   //обязательные параметры Date - год, месяц, день
-  console.log(Object.getOwnPropertyNames(date)[0]);
   if (!date) {
     return 'Unable to determine the time of year!';
     //проверяем также наличие обязательных параметров
-  } if (!(date instanceof Date) || Object.getOwnPropertyNames(date)) {
+  } if (!(date instanceof Date) || date.hasOwnProperty("toString")) {
     throw new Error('Invalid date!');
   } else {
     let month = date.getMonth();
-    console.log(month);
     if (month > 1 && month < 5) {
       return 'spring';
     }

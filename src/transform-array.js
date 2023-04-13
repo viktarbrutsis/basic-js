@@ -18,7 +18,7 @@ function transform(arr) {
     throw new Error ("'arr' parameter must be an instance of the Array!");
   }
   let result = [...arr];
-  console.log(result);
+  console.log(`получил [...arr] - &{result}`);
   for (let i = 0; i < result.length; i++) {
     if (result[i] === '--discard-next') {
       result.splice(i, 2)
@@ -43,8 +43,8 @@ function transform(arr) {
     }
   }
 
-  console.log(result);
-  console.log(arr);
+  console.log(`вывожу результат - &{result}`);
+  console.log(`вывожу исходник - &{result}`);
   return result;
 }
 

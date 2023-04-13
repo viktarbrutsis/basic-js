@@ -13,10 +13,13 @@ const { NotImplementedError } = require('../extensions/index.js');
  */
 const date = new Date(81, 10, 13, 12, 50, 13, 493)
 function getSeason(date) {
-  console.log(Object.getOwnPropertyNames(date));
+  //getOwnPropertyNames возвращает массив всех свойств
+  //обязательные параметры Date - год, месяц, день
+  console.log(Object.getOwnPropertyNames(date)[0]);
   if (!date) {
     return 'Unable to determine the time of year!';
-  } if (!(date instanceof Date) || isNaN(date)) {
+    //проверяем также наличие обязательных параметров
+  } if (!(date instanceof Date) || Object.getOwnPropertyNames(date)) {
     throw new Error('Invalid date!');
   } else {
     let month = date.getMonth();

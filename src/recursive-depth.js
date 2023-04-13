@@ -13,16 +13,21 @@ const { NotImplementedError } = require('../extensions/index.js');
  *
  */
 class DepthCalculator {
-  calculateDepth(arr) {
-    let depthCount = 1;
+  calculateDepth(arr, depthCount = 1, depthArray = []) {
     for (let i = 0; i < arr.length; i++) {
-      if (Array.isArray(arr[i])) {
-        depthCount++;
-        calculateDepth(arr[i]);
+        // let depthCount = 1;
+        if (Array.isArray(arr[i])) {
+          depthCount++;
+          depthArray.push(depthCount);
+          this.calculateDepth(arr[i], depthCount, depthArray);
+          //обнулить счетчик для нового массива в массиве
+          depthCount = 1;
+        }
+
       }
+
+        return depthArray.sort((min, max) => max - min)[0];
     }
-    console.log(depthCount);
-  }
 }
 const instance = new DepthCalculator();
 console.log(instance.calculateDepth([1, 2, 3, 4, [1, 2, [1, 2, [[[]]]]], 5, [1, [[[[[[]]]]]]]]));

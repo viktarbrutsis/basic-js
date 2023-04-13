@@ -17,7 +17,7 @@ function getSeason(date) {
   //обязательные параметры Date - год, месяц, день
   if (!date) {
     return 'Unable to determine the time of year!';
-    //проверяем также наличие обязательных параметров
+    //проверяем также наличие обязательных параметров - не сработало, заменил на hasOwnProperty("toString")
   } if (!(date instanceof Date) || date.hasOwnProperty("toString")) {
     throw new Error('Invalid date!');
   } else {

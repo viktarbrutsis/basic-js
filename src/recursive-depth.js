@@ -26,7 +26,7 @@ class DepthCalculator {
 
       }
 
-        return depthArray.sort((min, max) => max - min)[0];
+        return depthArray.length == 0 ? 1 :depthArray.sort((min, max) => max - min)[0];
     }
 }
 const instance = new DepthCalculator();

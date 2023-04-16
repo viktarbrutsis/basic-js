@@ -26,7 +26,8 @@ function renameFiles(names) {
       }
     }
   }
-  console.log(names);
+  // console.log(names);
+  return names;
 }
 
 renameFiles(['doc', 'doc', 'image', 'doc(1)', 'doc']);

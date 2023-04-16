@@ -30,13 +30,11 @@ const array = [
 function createDreamTeam(members) {
   if (Array.isArray(members)) {
     let newArray = members.filter(i => typeof(i) === 'string').map(i => i.replace(/ /g,'').toUpperCase()).sort();
-    console.log(newArray);
   let result = '';
   newArray.forEach(item => {
     result += item[0];
   })
   //console.log(newArray);
-  console.log(result);
   return result;
   } else {
     return false;
@@ -49,6 +47,3 @@ module.exports = {
   createDreamTeam
 };
 
-const str = '   He ll o W orl d   ';
-console.log(str);
-console.log(str.replace(/ /g,''));

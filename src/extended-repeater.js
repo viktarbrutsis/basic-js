@@ -35,7 +35,6 @@ function repeater(str, options) {
   if (options.addition === undefined) {
     options.addition = '';
   }
-  console.log(options.additionRepeatTimes);
   for (let i = 0; i < options.additionRepeatTimes; i++) {
     subString.push(String(options.addition));
   }
@@ -47,8 +46,6 @@ function repeater(str, options) {
   // console.log(resStr);
   return resStr;
 }
-
-console.log(repeater(true, { repeatTimes: 3, separator: '??? ', addition: false, additionRepeatTimes: 2, additionSeparator: '!!!' }));
 
 module.exports = {
   repeater

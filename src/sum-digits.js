@@ -23,7 +23,6 @@ function getSumOfDigits(n) {
   if (result >=10) {
     getSumOfDigits(result);
   }
-  console.log(n);
   return result;
 }
 

@@ -21,10 +21,7 @@ function deleteDigit(n) {
       min = string[i];
     }
   }
-  console.log(min.toString());
-  console.log(string.indexOf(min));
   string.splice(string.indexOf(min), 1);
-  console.log(string);
   result = Number(string.join(''));
   return result;
 }

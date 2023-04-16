@@ -33,12 +33,10 @@ function encodeLine(str) {
     }
   }
 
-  console.log(result);
 
   return result;
 }
 
-encodeLine('aaaatttt');
 
 module.exports = {
   encodeLine

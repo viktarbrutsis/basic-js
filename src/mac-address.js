@@ -16,7 +16,6 @@ const { NotImplementedError } = require('../extensions/index.js');
  */
 function isMAC48Address(n) {
   const array = n.split('-');
-  console.log(array);
   const letters = 'ABCDEF';
   for (let i = 0; i < array.length; i++) {
     if ((letters.includes(array[i][0]) || (array[i][0] >=0 && array[i][0] <=9)) && (letters.includes(array[i][1]) || (array[i][1] >=0 && array[i][1] <=9))) {

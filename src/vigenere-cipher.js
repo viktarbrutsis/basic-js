@@ -29,6 +29,8 @@ class VigenereCipheringMachine {
     // remove line with error and write your code here
   }
 }
+const directMachine = new VigenereCipheringMachine();
+console.log(directMachine.encrypt('attack at dawn!', 'alphonse'));
 
 module.exports = {
   VigenereCipheringMachine
